@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       <h1>Users Table</h1>
       <button onClick={openAddModal}>Add User</button>
-      <table>
+      <table style={{ marginLeft: '530px', marginTop: '50px' }}>
         <thead>
           <tr>
             <th>Name</th>
@@ -65,10 +65,14 @@ function App() {
           {users.map(user => (
             <tr key={user.id}>
               <td>{user.firstName} {user.lastName}</td>
-              <td>{user.email}</td>
-              <td>
+              <td style={{
+                marginLeft: '50px'
+              }}>{user.email}</td>
+              <td style={{
+                marginLeft: '50px'
+              }}>
                 <button onClick={() => openEditModal(user)}>Edit</button>
-                <button onClick={() => deleteUser(user.id)}>Delete</button>
+                <button style={{ marginLeft: '4px' }} onClick={() => deleteUser(user.id)}>Delete</button>
               </td>
             </tr>
           ))}
@@ -76,7 +80,7 @@ function App() {
       </table>
 
       {isAddModalOpen && <AddUserModal addUser={addUser} closeAddModal={closeAddModal} closeEditModal={closeEditModal} />}
-      {isEditModalOpen && <EditUserModal user={selectedUser} closeModal={closeAddModal} editUser={editUser} closeModal={closeEditModal} />}
+      {isEditModalOpen && <EditUserModal user={selectedUser} closeEditModal={closeEditModal} editUser={editUser} />}
     </div>
   );
 }

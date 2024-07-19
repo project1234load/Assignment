@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-function EditUserModal({ user, editUser, closeModal }) {
+function EditUserModal({ user, editUser, closeEditModal }) {
     const [name, setName] = useState(`${user.firstName} ${user.lastName}`);
     const [email, setEmail] = useState(user.email);
 
@@ -19,6 +19,9 @@ function EditUserModal({ user, editUser, closeModal }) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            border: '1px solid black',
+            padding: '0px 20px 20px 20px',
+            backgroundColor: 'white'
 
         }
     };
@@ -35,7 +38,7 @@ function EditUserModal({ user, editUser, closeModal }) {
                 <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
             </label><br />
             <button onClick={handleSubmit}>Edit</button>
-            <button onClick={closeModal}>Cancel</button>
+            <button onClick={closeEditModal}>Cancel</button>
         </div>
     );
 }

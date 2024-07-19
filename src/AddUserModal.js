@@ -18,6 +18,10 @@ function AddUserModal(props) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            border: '1px solid black',
+            padding: '0px 20px 20px 20px',
+            backgroundColor: 'white'
+
 
         }
     };
